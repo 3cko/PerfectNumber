@@ -1,10 +1,17 @@
-//import Math;
+/* John Martin
+ * CS55
+ * 03/14/13
+ * PerfectNumber Assignment
+ */
+
 
 public class PerfectNumber
 {
     
-    public static boolean is_prime(int n)
+    public static boolean isPrime(int n)
     {
+        // returns boolean if n is a prime number
+
         if (n % 2 == 0) return false;
 
         for (int i=3; i*i <= n; i+=2)
@@ -14,22 +21,28 @@ public class PerfectNumber
         return true;
     }
 
+    public static double getPerfect(int x)
+    {
+        // returns answer for perfect number algorithm 2**(x-1)(2**x - 1)
+        double set_one = Math.pow(2, (x - 1));
+        double set_two = Math.pow(2, x);
+        double answer = set_one * (set_two - 1);
+        return answer;
+    }
+
     public static void main(String[] args)
     {
-        double alg = 0;
-        int x = 0;
-
-        while (alg <= 10000)
+        //  main method, while my count is less than 10, check if prime,
+        //  if is prime, get its perfect number.
+        int count = 0;
+        while (count < 10)
         {
-            if (is_prime(x))
+            if (isPrime(count))
             {
-                double f = Math.pow(2, (x - 1));
-                double e = Math.pow(2, x);
-                alg = f * (e - 1);
-
-                if (alg < 10000) System.out.println(Math.round(alg));
+                // invokes Math.round to get rid of the trailing '.0'
+                System.out.println(Math.round(getPerfect(count)));
             }
-            x++;
+            count++;
         }
     }
 
