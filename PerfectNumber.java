@@ -8,6 +8,22 @@
 public class PerfectNumber
 {
     
+    public static void main(String[] args)
+    {
+        //  main method, while my count is less than 10, check if prime,
+        //  if is prime, get its perfect number.
+        int count = 0;
+        while (count < 10)
+        {
+            if (isPrime(count))
+            {
+                // invokes Math.round to get rid of the trailing '.0'
+                System.out.println(Math.round(getPerfect(count)));
+            }
+            count++;
+        }
+    }
+
     public static boolean isPrime(int n)
     {
         // returns boolean if n is a prime number
@@ -28,22 +44,6 @@ public class PerfectNumber
         double set_two = Math.pow(2, x);
         double answer = set_one * (set_two - 1);
         return answer;
-    }
-
-    public static void main(String[] args)
-    {
-        //  main method, while my count is less than 10, check if prime,
-        //  if is prime, get its perfect number.
-        int count = 0;
-        while (count < 10)
-        {
-            if (isPrime(count))
-            {
-                // invokes Math.round to get rid of the trailing '.0'
-                System.out.println(Math.round(getPerfect(count)));
-            }
-            count++;
-        }
     }
 
 }
