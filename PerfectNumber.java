@@ -24,24 +24,24 @@ public class PerfectNumber
         }
     }
 
-    public static boolean isPrime(int n)
+    public static boolean isPrime(int number)
     {
         // returns boolean if n is a prime number
 
-        if (n % 2 == 0) return false;
+        if (number % 2 == 0) return false;
 
-        for (int i=3; i*i <= n; i+=2)
+        for (int x = 3; x * x <= number; x+=2)
         {
-            if (n % i == 0) return false;
+            if (number % x == 0) return false;
         }
         return true;
     }
 
-    public static double getPerfect(int x)
+    public static double getPerfect(int prime)
     {
         // returns answer for perfect number algorithm 2**(x-1)(2**x - 1)
-        double set_one = Math.pow(2, (x - 1));
-        double set_two = Math.pow(2, x);
+        double set_one = Math.pow(2, (prime - 1));
+        double set_two = Math.pow(2, prime);
         double answer = set_one * (set_two - 1);
         return answer;
     }
