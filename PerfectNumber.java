@@ -30,7 +30,7 @@ public class PerfectNumber
 
         if (number % 2 == 0) return false;
 
-        for (int x = 3; x * x <= number; x+=2)
+        for (int x = 3; x * x <= number; x += 2)
         {
             if (number % x == 0) return false;
         }
