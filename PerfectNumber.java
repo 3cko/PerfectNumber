@@ -12,15 +12,13 @@ public class PerfectNumber
     {
         //  main method, while my count is less than 10, check if prime,
         //  if is prime, get its perfect number.
-        int count = 0;
-        while (count < 10)
+        for (int count = 0; count < 10; count++)
         {
             if (isPrime(count))
             {
                 // invokes Math.round to get rid of the trailing '.0'
                 System.out.println(Math.round(getPerfect(count)));
             }
-            count++;
         }
     }
 
